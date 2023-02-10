@@ -9,7 +9,7 @@ export default async function handler(
 
   if (req.body) {
     console.log(req.body);
-    await feedbackProcessor.create({ name });
+    await feedbackProcessor.create({ name, email, rating, comment });
     res.status(200).json("Feedback submitted");
   } else {
     res.status(400);

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Inter } from "@next/font/google";
 import styles from "@/styles/Home.module.css";
+import submitFeedbackHandler from "@/helpers/submitFeedbackHandler";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -8,14 +9,15 @@ const inter = Inter({ subsets: ["latin"] });
 export default function Home() {
   const [newFeedback, setNewFeedback] = useState("");
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    const requestOptions = {
-      method: "PUT",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ name: newFeedback }),
-    };
-    return fetch("/api/submitFeedback", requestOptions);
+
+    await submitFeedbackHandler({
+      name: "tu",
+      email: "esti",
+      rating: 1,
+      comment: "proasta",
+    });
   };
 
   return (

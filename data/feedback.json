@@ -1,1 +1,17 @@
-[]
+[
+    {
+        "name": "tu"
+    },
+    {
+        "name": "tu",
+        "email": "esti",
+        "rating": 1,
+        "comment": "proasta"
+    },
+    {
+        "name": "tu",
+        "email": "esti",
+        "rating": 1,
+        "comment": "proasta"
+    }
+]
