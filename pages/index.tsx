@@ -10,7 +10,7 @@ import SubmitButton from "@/components/SubmitButton";
 const inter = Inter({ subsets: ["latin"] });
 
 // TODO: rename function from home to smth more relevant
-export default function Home() {
+export default function FeedbackForm() {
   const [newFeedback, setNewFeedback] = useState("");
 
   const handleSubmit = async (event) => {
