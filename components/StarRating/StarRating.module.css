@@ -1,0 +1,32 @@
+.stars {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+}
+
+.stars > input {
+  display: none;
+}
+
+.stars > label {
+  cursor: pointer;
+  position: relative;
+}
+
+.stars > label:hover > .empty,
+.stars .filled {
+  display: none;
+}
+.stars > label:hover > .filled {
+  display: inline;
+}
+
+.stars > label:hover ~ label > .filled,
+.stars > input:checked ~ label > .filled {
+  display: inline;
+}
+
+.stars > label:hover ~ label > .empty,
+.stars > input:checked ~ label > .empty {
+  display: none;
+}
