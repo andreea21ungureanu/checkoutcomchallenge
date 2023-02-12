@@ -1,3 +1,5 @@
+import { ReactNode } from "react";
+
 export type Feedback = {
   name: string;
   email: string;
@@ -23,4 +25,19 @@ export type StarRatingProps = {
 export type ButtonProps = {
   label: string;
   onClick: () => void;
+};
+
+export type NavBarProps = {
+  title: string;
+  withLeftButton: boolean;
+  withRightButton: boolean;
+};
+
+export type FooterProps = {
+  onClick: () => void;
+  withButton: boolean;
+};
+
+export type LayoutProps = {
+  children: ReactNode;
 };

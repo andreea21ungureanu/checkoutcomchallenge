@@ -1,4 +1,4 @@
-export const listRootStyle = ["divide-y", "divide-gray-200"].join(" ");
+export const listRootStyle = ["mt-5 divide-y", "divide-gray-200"].join(" ");
 
 export const listItemStyle = [
   "relative",
