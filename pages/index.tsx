@@ -7,13 +7,14 @@ import TextArea from "@/components/TextArea";
 import StarRating from "@/components/StarRating";
 import SubmitButton from "@/components/Buttons/SubmitButton";
 import NavBar from "@/components/Layout/NavBar";
+import { useRouter } from "next/router";
 
 const inter = Inter({ subsets: ["latin"] });
 
 // TODO: Move string to global constants
 export default function FeedbackForm() {
   const [newFeedback, setNewFeedback] = useState("");
-
+  const router = useRouter();
   const handleSubmit = async (event) => {
     event.preventDefault();
 
@@ -28,7 +29,7 @@ export default function FeedbackForm() {
   return (
     <div className="m-5">
       <NavBar title={"Feedback Form"} />
-      <form className="space-y-6">
+      <form className="space-y-6" onSubmit={() => router.push("/responses")}>
         <div className="bg-white px-4 py-5 shadow sm:rounded-lg sm:p-6">
           <div className="md:grid md:grid-cols-3 md:gap-6">
             <div className="grid grid-cols-3 gap-6">
