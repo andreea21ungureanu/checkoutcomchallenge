@@ -5,7 +5,9 @@ export const labelStyle = [
   "text-gray-700",
 ].join(" ");
 
-export const rootStyle = ["col-span-6", "sm:col-span-4, text-black"].join(" ");
+export const rootStyle = ["col-span-6", "sm:col-span-4", "text-black"].join(
+  " "
+);
 
 export const textStyle = [
   "block",

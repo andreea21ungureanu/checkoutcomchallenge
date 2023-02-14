@@ -6,6 +6,8 @@ export default function TextArea({
   label,
   placeholder,
   description,
+  onChange,
+  value,
 }: TextAreaProps) {
   return (
     <div className={rootStyle}>
@@ -19,7 +21,8 @@ export default function TextArea({
           rows={5}
           className={textStyle}
           placeholder={placeholder}
-          defaultValue={""}
+          onChange={onChange}
+          value={value}
         />
       </div>
       <p className={descriptionStyle}>{description}</p>

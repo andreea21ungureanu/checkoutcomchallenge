@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { BsStarFill, BsStar } from "react-icons/bs";
 import styles from "./StarRating.module.css";
 import { StarRatingProps } from "@/types";
@@ -7,7 +8,12 @@ import { labelStyle, rootStyle } from "../generalStyles";
 const ICON_COLOR = "rgb(246, 227, 23)";
 const ICON_SIZE = "2em";
 
-export default function StarRating({ label, name }: StarRatingProps) {
+// TODO: add keys without showing the radio buttons
+export default function StarRating({
+  label,
+  name,
+  setStarRating,
+}: StarRatingProps) {
   return (
     <div className={rootStyle}>
       <label htmlFor={label} className={labelStyle}>
@@ -21,6 +27,9 @@ export default function StarRating({ label, name }: StarRatingProps) {
               name={name}
               type="radio"
               value={index}
+              onChange={(event) => {
+                setStarRating(event.currentTarget.value);
+              }}
             />
             <label htmlFor={`${index}-${name}`}>
               <BsStar
