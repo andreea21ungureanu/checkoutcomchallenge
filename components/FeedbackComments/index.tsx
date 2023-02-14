@@ -5,22 +5,24 @@ import {
   previewStyle,
   senderStyle,
   listItemStyle,
+  spinnerRoot
 } from "./styles";
 import { FeedbackCommentsProps } from "@/types";
 import { BsStarFill } from "react-icons/bs";
+import Spinner from "../Spinner";
 const ICON_COLOR = "rgb(246, 227, 23)";
 const ICON_SIZE = "1em";
-export default function FeedbackComments({ comments }: FeedbackCommentsProps) {
+export default function FeedbackComments({ comments, loadingState }: FeedbackCommentsProps) {
   const renderStars = (starRating:number) => {
     let starsArray: ReactNode[] = [];
 
     while (starRating > 0) {
-      starsArray.push(<BsStarFill color={ICON_COLOR} size={ICON_SIZE} />);
+      starsArray.push(<BsStarFill key={`feedbackStar-${starRating}`} color={ICON_COLOR} size={ICON_SIZE} />);
       starRating--;
     }
     return starsArray;
   };
-  return (
+  return loadingState? <div className={spinnerRoot}><Spinner/></div> :(
     <ul role="list" className={listRootStyle}>
       {comments.map((comment, idx) => (
         <li key={idx} className={listItemStyle}>

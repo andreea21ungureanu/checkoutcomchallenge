@@ -1,4 +1,4 @@
-import {  useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import FeedbackAverage from "./FeedbackAverage";
 import {
   chartBarContainerStyle,
@@ -14,9 +14,20 @@ export default function FeedbackChart({
   setCommentsRatingFilter,
 }: FeedbackChartProps) {
   const [starRatings, setStarRatings] = useState<number[]>([]);
+  const [isError, setIsError] = useState(false);
+
   useEffect(() => {
-    getStarRatingsHandler().then((result) => setStarRatings(result));
+    const fetchData = async () => {
+      try {
+        getStarRatingsHandler().then((result) => setStarRatings(result));
+      } catch (error) {
+        setIsError(true);
+      }
+    };
+    fetchData();
   }, []);
+
+  if (isError) return <h3> Error! Please try again later</h3>;
 
   // create map with no of each star occurence
   let starsMap = new Map<number, number>();

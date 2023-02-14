@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { BsStarFill, BsStar } from "react-icons/bs";
 import styles from "./StarRating.module.css";
 import { StarRatingProps } from "@/types";
@@ -21,7 +21,7 @@ export default function StarRating({
       </label>
       <div className={styles.stars}>
         {[5, 4, 3, 2, 1].map((index) => (
-          <>
+          <React.Fragment key={index}>
             <input
               id={`${index}-${name}`}
               name={name}
@@ -43,7 +43,7 @@ export default function StarRating({
                 size={ICON_SIZE}
               />
             </label>
-          </>
+          </React.Fragment>
         ))}
       </div>
     </div>

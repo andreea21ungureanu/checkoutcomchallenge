@@ -28,13 +28,11 @@ export default function FeedbackForm() {
   });
 
   // regex
-  const lettersSpaceRegex = /^(?!\s+)[a-zA-Z.+ '-]+$/;
+  const lettersSpaceRegex = /^[a-zA-Z ]*$/;;
   const emailRegex =
     /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
   const startRatingRegex = /^[1-5]$/;
   const commentRegex = /[\S\s]+[\S]+/;
-
-  // TODO validate comment server side for crossscripting
 
   const validateForm = () => {
     let errors: Record<Fields, string> = {
@@ -72,15 +70,15 @@ export default function FeedbackForm() {
 
     // 2. validating the form before submission
     let successfulSubmission = validateForm();
-    console.log(successfulSubmission);
 
     if (successfulSubmission) {
       // 3. sending a POST request
+      let starRatingNumber = parseInt(starRating);
       await submitFeedbackHandler({
-        name,
-        email,
-        starRating: parseInt(starRating),
-        comment,
+        name: name.trim(),
+        email: email.trim(),
+        starRating: starRatingNumber,
+        comment: comment.trim(),
       });
 
       // 4. redirecting to the responses page
@@ -100,7 +98,7 @@ export default function FeedbackForm() {
                 label={"Name"}
                 name={"name"}
                 onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
-                  setName(event.target.value.trim());
+                  setName(event.target.value);
                   setSubmitButtonDisabled(false);
                 }}
                 type="text"
@@ -111,7 +109,7 @@ export default function FeedbackForm() {
               <Input
                 label={"Email address"}
                 onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
-                  setEmail(event.target.value.trim());
+                  setEmail(event.target.value);
                   setSubmitButtonDisabled(false);
                 }}
                 type="email"

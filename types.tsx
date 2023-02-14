@@ -78,6 +78,7 @@ export type PaginationProps = {
 
 export type FeedbackCommentsProps = {
   comments: Array<Feedback>;
+  loadingState?: boolean;
 };
 
 export type FeedbackChartProps = {

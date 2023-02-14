@@ -5,6 +5,7 @@ export default async function submitFeedbackHandler(
   feedbackResponse: Feedback
 ) {
   const { name, email, starRating, comment } = feedbackResponse;
+  console.log(starRating)
 
   const requestOptions = {
     method: "POST",

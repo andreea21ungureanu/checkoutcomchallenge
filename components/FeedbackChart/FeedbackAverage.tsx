@@ -31,12 +31,12 @@ export default function FeedbackAverage({
     let starsLeft = 5 - numberOfStars;
 
     while (numberOfStars > 0) {
-      starsArray.push(<BsStarFill color={ICON_COLOR} size={ICON_SIZE} />);
+      starsArray.push(<BsStarFill key={`avgStar-${numberOfStars}`} color={ICON_COLOR} size={ICON_SIZE} />);
       numberOfStars--;
     }
 
     while (starsLeft) {
-      starsArray.push(<BsStar color={ICON_COLOR} size={ICON_SIZE} />);
+      starsArray.push(<BsStar key={`avgStar-${starsLeft+5}`} color={ICON_COLOR} size={ICON_SIZE} />);
       starsLeft--;
     }
     return starsArray;

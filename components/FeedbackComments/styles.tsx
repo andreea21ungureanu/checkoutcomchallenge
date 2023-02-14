@@ -1,13 +1,10 @@
 export const listRootStyle = ["mt-5 divide-y", "divide-gray-200"].join(" ");
-
+export const spinnerRoot = ["flex", "justify-center"].join(" ");
 export const listItemStyle = [
   "relative",
   "bg-white",
   "py-5",
   "px-4",
-  "focus-within:ring-2",
-  "focus-within:ring-inset",
-  "focus-within:ring-indigo-600",
   "hover:bg-gray-50",
 ].join(" ");
 

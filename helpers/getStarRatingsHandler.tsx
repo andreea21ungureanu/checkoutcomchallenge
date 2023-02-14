@@ -17,7 +17,6 @@ export default async function getStarRatingsHandler() {
     });
     return starRatings;
   } catch (error) {
-    console.log("Fetch error: ", error);
-    return false;
+    throw new Error("An error occured. Please try again.");
   }
 }
