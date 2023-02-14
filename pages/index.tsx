@@ -1,6 +1,5 @@
-import { useCallback, useEffect, useState } from "react";
+import { useState } from "react";
 import { Inter } from "@next/font/google";
-import styles from "@/styles/Home.module.css";
 import submitFeedbackHandler from "@/helpers/submitFeedbackHandler";
 import Input from "@/components/Input";
 import TextArea from "@/components/TextArea";
@@ -8,7 +7,6 @@ import StarRating from "@/components/StarRating";
 import SubmitButton from "@/components/Buttons/SubmitButton";
 import NavBar from "@/components/Layout/NavBar";
 import { useRouter } from "next/router";
-import { BsXCircleFill } from "react-icons/bs";
 import FormError from "@/components/FormError";
 import { Fields } from "@/types";
 
@@ -59,7 +57,12 @@ export default function FeedbackForm() {
       errors.comment = "Please introduce your feedback";
 
     setErrorObject(errors);
-    setSubmitButtonDisabled(Object.keys(errors).length != 0);
+    let hasNoErrorKeys = Object.values(errors).every((x) => x === "");
+    if (!hasNoErrorKeys) {
+      setSubmitButtonDisabled(!hasNoErrorKeys);
+      return false;
+    }
+    return true;
   };
 
   const router = useRouter();
@@ -68,18 +71,21 @@ export default function FeedbackForm() {
     event.preventDefault();
 
     // 2. validating the form before submission
-    validateForm();
+    let successfulSubmission = validateForm();
+    console.log(successfulSubmission);
 
-    // 3. sending a POST request
-    await submitFeedbackHandler({
-      name,
-      email,
-      rating: parseInt(starRating),
-      comment,
-    });
+    if (successfulSubmission) {
+      // 3. sending a POST request
+      await submitFeedbackHandler({
+        name,
+        email,
+        starRating: parseInt(starRating),
+        comment,
+      });
 
-    // 4. redirecting to the responses page
-    router.push("/responses");
+      // 4. redirecting to the responses page
+      router.push("/responses");
+    }
   };
 
   // TODO set star rating form validator

@@ -5,12 +5,19 @@ const fileSystem = require("node:fs/promises");
 let feedback = require("data/feedback.json");
 
 export const feedbackProcessor = {
-  getAll: () => feedback,
-  find: (x) => feedback.find(x),
+  getValues,
   create,
-  //   update,
-  //   delete: _delete,
 };
+
+function getValues(filterParam) {
+  if (filterParam.hasOwnProperty("starRating")) {
+    return feedback.filter(
+      (individualFeedback) =>
+        individualFeedback.starRating === parseInt(filterParam.starRating)
+    );
+  }
+  return feedback;
+}
 
 async function create(individualFeedback) {
   feedback.push(individualFeedback);

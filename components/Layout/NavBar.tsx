@@ -10,26 +10,13 @@ import {
 import FilterButton from "../Buttons/FilterButton";
 
 // TODO: Make nav text bigger in small screen mode
-export default function NavBar({
-  title,
-  withLeftButton,
-  withRightButton,
-}: NavBarProps) {
+export default function NavBar({ title, leftChild, rightChild }: NavBarProps) {
   return (
     <div className={rootStyle}>
-      <div className={helperStyleLeft}>
-        {withLeftButton ? <BackButton /> : null}
-      </div>
+      <div className={helperStyleLeft}>{leftChild}</div>
 
       <h1 className={navBarStyle}>{title}</h1>
-      <div className={helperStyleRight}>
-        {withRightButton ? <FilterButton /> : null}
-      </div>
+      <div className={helperStyleRight}>{rightChild}</div>
     </div>
   );
 }
-
-NavBar.defaultProps = {
-  withLeftButton: false,
-  withRightButton: false,
-};

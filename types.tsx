@@ -3,7 +3,7 @@ import { Dispatch, ReactNode, SetStateAction } from "react";
 export type Feedback = {
   name: string;
   email: string;
-  rating: number;
+  starRating: number;
   comment: string;
 };
 
@@ -36,8 +36,8 @@ export type ButtonProps = {
 
 export type NavBarProps = {
   title: string;
-  withLeftButton: boolean;
-  withRightButton: boolean;
+  leftChild?: ReactNode;
+  rightChild?: ReactNode;
 };
 
 export type FooterProps = {
@@ -45,6 +45,9 @@ export type FooterProps = {
   withButton: boolean;
 };
 
+export type FilterButtonProps = {
+  onClick: () => void;
+};
 export type LayoutProps = {
   children: ReactNode;
 };
@@ -75,4 +78,17 @@ export type PaginationProps = {
 
 export type FeedbackCommentsProps = {
   comments: Array<Feedback>;
+};
+
+export type FeedbackChartProps = {
+  setCommentsRatingFilter: Dispatch<SetStateAction<any>>;
+};
+
+export type TextItemProps = {
+  starRating?: string;
+};
+
+export type FeedbackAverageProps = {
+  ratings: Map<number, number>;
+  totalRatings: number;
 };

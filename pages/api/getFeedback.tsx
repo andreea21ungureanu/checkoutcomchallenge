@@ -5,6 +5,7 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  const response = feedbackProcessor.getAll();
+  let reqQuery = req.query;
+  const response = feedbackProcessor.getValues(reqQuery);
   return res.status(200).json(response);
 }

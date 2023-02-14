@@ -1,50 +1,56 @@
 [
-  {
-    "name": "andreea",
-    "email": "and@me.com",
-    "rating": 3,
-    "comment": "hahahhaha"
-  },
-  {
-    "name": "dd",
-    "email": "matt@me.com",
-    "rating": 5,
-    "comment": "shit"
-  },
-  {
-    "name": "mccatt",
-    "email": "matt@me.com",
-    "rating": 5,
-    "comment": "shit"
-  },
-  {
-    "name": "msddssatt",
-    "email": "mddatt@me.com",
-    "rating": 5,
-    "comment": "shit"
-  },
-  {
-    "name": "msatt",
-    "email": "matt@me.com",
-    "rating": 5,
-    "comment": "shit"
-  },
-  {
-    "name": "msaaatt",
-    "email": "matt@me.com",
-    "rating": 5,
-    "comment": "shit"
-  },
-  {
-    "name": "msawwwtt",
-    "email": "matt@me.com",
-    "rating": 5,
-    "comment": "shit"
-  },
-  {
-    "name": "msatssst",
-    "email": "matt@me.com",
-    "rating": 5,
-    "comment": "shit"
-  }
+    {
+        "name": "andreea",
+        "email": "and@me.com",
+        "starRating": 1,
+        "comment": "hahahhaha"
+    },
+    {
+        "name": "dd",
+        "email": "matt@me.com",
+        "starRating": 1,
+        "comment": "shit"
+    },
+    {
+        "name": "mccatt",
+        "email": "matt@me.com",
+        "starRating": 3,
+        "comment": "shit"
+    },
+    {
+        "name": "msddssatt",
+        "email": "mddatt@me.com",
+        "starRating": 3,
+        "comment": "shit"
+    },
+    {
+        "name": "msatt",
+        "email": "matt@me.com",
+        "starRating": 5,
+        "comment": "shit"
+    },
+    {
+        "name": "msaaatt",
+        "email": "matt@me.com",
+        "starRating": 5,
+        "comment": "shit"
+    },
+    {
+        "name": "msawwwtt",
+        "email": "matt@me.com",
+        "starRating": 5,
+        "comment": "shit"
+    },
+    {
+        "name": "msatssst",
+        "email": "matt@me.com",
+        "starRating": 5,
+        "comment": "shit"
+    },   
+    {
+        "name": "Matt",
+        "email": "mattfroggett@me.com",
+        "starRating": 4,
+        "comment": "jknbkjnbkjknjknkjn nj jvk jk jk nvjknfdjvnfdv fvjkfvnfjdkv dfjk njk df jkfgdnfjdkbnfdajkvdflz jfdk fdjk df jkdfz dfjv kzdfhvfdk vdfhjkv fdhjkv fgdh dfg hjg ghjk dfgjkfgd hfgjd fgdhj fgdhjkfd dfhj fgdjng dfjvfgdnbfgjdiv zfgdjk gfjkgf jghkd dgjk gdjkg jgk xfgjk gfnk"
+    }
 ]
