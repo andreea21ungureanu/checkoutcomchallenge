@@ -1,6 +1,5 @@
 import { useState } from "react";
-import { Inter } from "@next/font/google";
-import submitFeedbackHandler from "@/helpers/submitFeedbackHandler";
+import submitFeedbackHandler from "@/helpers/handlers/submitFeedbackHandler";
 import Input from "@/components/Input";
 import TextArea from "@/components/TextArea";
 import StarRating from "@/components/StarRating";

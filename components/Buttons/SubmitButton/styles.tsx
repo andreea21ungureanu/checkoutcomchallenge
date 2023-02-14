@@ -1,6 +1,6 @@
 import { buttonBaseStyle } from "../../../styles/buttonsStyles";
 
-export const buttonStyles = [
+export const button = [
   buttonBaseStyle,
   "ml-3",
   "justify-center",

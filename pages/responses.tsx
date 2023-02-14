@@ -5,7 +5,7 @@ import FeedbackComments from "@/components/FeedbackComments";
 import BackButton from "@/components/Buttons/BackButton";
 import NavBar from "@/components/Layout/NavBar";
 import { Feedback } from "@/types";
-import getFeedbackHandler from "@/helpers/getFeedbackHandler";
+import getFeedbackHandler from "@/helpers/handlers/getFeedbackHandler";
 import FilterButton from "@/components/Buttons/FilterButton";
 import TextItem from "@/components/TextItem";
 import { rootShadow } from "@/styles/globalPageStyles";
