@@ -1,1 +1,8 @@
-[]
+[
+    {
+        "name": "andreea",
+        "email": "and@me.com",
+        "rating": 3,
+        "comment": "hahahhaha"
+    }
+]

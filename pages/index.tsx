@@ -67,12 +67,12 @@ export default function FeedbackForm() {
     event.preventDefault();
     validateForm();
 
-    // await submitFeedbackHandler({
-    //   name,
-    //   email,
-    //   rating: 1,
-    //   comment: "proasta",
-    // });
+    await submitFeedbackHandler({
+      name,
+      email,
+      rating: parseInt(starRating),
+      comment,
+    });
     router.push("/responses");
   };
 
