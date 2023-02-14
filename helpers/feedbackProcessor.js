@@ -9,6 +9,8 @@ export const feedbackProcessor = {
   create,
 };
 
+// Retrieve all the information about the feedback by default
+// Filter the information for a specific rating if the query is specified
 function getValues(filterParam) {
   if (filterParam.hasOwnProperty("starRating")) {
     return feedback.filter(
@@ -19,6 +21,7 @@ function getValues(filterParam) {
   return feedback;
 }
 
+// Create a new field in the JSON file
 async function create(individualFeedback) {
   feedback.push(individualFeedback);
   await saveData();

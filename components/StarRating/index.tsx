@@ -2,13 +2,14 @@ import React, { useState } from "react";
 import { BsStarFill, BsStar } from "react-icons/bs";
 import styles from "./StarRating.module.css";
 import { StarRatingProps } from "@/types";
-import { labelStyle, rootStyle } from "../generalStyles";
+import {
+  ICON_COLOR,
+  labelStyle,
+  rootStyle,
+} from "../../styles/globalComponentStyles";
 
-// TODO: use these only once, instead of two components
-const ICON_COLOR = "rgb(246, 227, 23)";
 const ICON_SIZE = "2em";
 
-// TODO: add keys without showing the radio buttons
 export default function StarRating({
   label,
   name,

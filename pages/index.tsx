@@ -9,10 +9,19 @@ import NavBar from "@/components/Layout/NavBar";
 import { useRouter } from "next/router";
 import FormError from "@/components/FormError";
 import { Fields } from "@/types";
+import {
+  indexGridLeft,
+  indexRootGrid,
+  rootShadow,
+  indexTextArea,
+} from "@/styles/globalPageStyles";
+import {
+  commentRegex,
+  emailRegex,
+  lettersSpaceRegex,
+  startRatingRegex,
+} from "@/helpers/regexHelpers";
 
-const inter = Inter({ subsets: ["latin"] });
-
-// TODO: Move string to global constants
 export default function FeedbackForm() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -27,13 +36,7 @@ export default function FeedbackForm() {
     comment: "",
   });
 
-  // regex
-  const lettersSpaceRegex = /^[a-zA-Z ]*$/;;
-  const emailRegex =
-    /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
-  const startRatingRegex = /^[1-5]$/;
-  const commentRegex = /[\S\s]+[\S]+/;
-
+  // Form validation that check whether each field has a valid value
   const validateForm = () => {
     let errors: Record<Fields, string> = {
       name: "",
@@ -55,6 +58,9 @@ export default function FeedbackForm() {
       errors.comment = "Please introduce your feedback";
 
     setErrorObject(errors);
+
+    // Check whether there are any errors in order to disable "Submit" button
+    // Return boolean value to decide whether a POST request has to be submitted
     let hasNoErrorKeys = Object.values(errors).every((x) => x === "");
     if (!hasNoErrorKeys) {
       setSubmitButtonDisabled(!hasNoErrorKeys);
@@ -86,17 +92,16 @@ export default function FeedbackForm() {
     }
   };
 
-  // TODO set star rating form validator
   return (
     <div className="m-5">
       <NavBar title={"Feedback Form"} />
       <form noValidate className="space-y-6" onSubmit={handleSubmit}>
-        <div className="bg-white px-4 py-5 shadow sm:rounded-lg sm:p-6">
-          <div className="md:grid md:grid-cols-3 md:gap-6">
-            <div className="grid grid-cols-3 gap-2">
+        <div className={rootShadow}>
+          <div className={indexRootGrid}>
+            <div className={indexGridLeft}>
               <Input
                 label={"Name"}
-                name={"name"}
+                name={Fields.NAME}
                 onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
                   setName(event.target.value);
                   setSubmitButtonDisabled(false);
@@ -114,22 +119,21 @@ export default function FeedbackForm() {
                 }}
                 type="email"
                 value={email}
-                name="email"
+                name={Fields.NAME}
               />
               <FormError errorObject={errorObject} field={Fields.EMAIL} />
 
               <StarRating
                 label="Rating"
-                name={"5StarRating"}
+                name={Fields.STARRATING}
                 setStarRating={setStarRating}
               />
               <FormError errorObject={errorObject} field={Fields.STARRATING} />
             </div>
 
-            <div className="mt-5 space-y-6 md:col-span-2 md:mt-0">
+            <div className={indexTextArea}>
               <TextArea
                 label={"Comment"}
-                description={"Write your feedback here"}
                 placeholder={"Write your feedback here"}
                 onChange={(event: React.ChangeEvent<HTMLTextAreaElement>) => {
                   setComment(event.target.value);

@@ -21,22 +21,20 @@ export const starBase = [
   "flex",
 ].join(" ");
 
-export const starTextStyle = [starBase, "justify-end"].join(" ");
+export const starText = [starBase, "justify-end"].join(" ");
 
-export const percentageTextStyle = [starBase, "justify-start"].join(" ");
+export const percentageText = [starBase, "justify-start"].join(" ");
 
-export const averageTextStyle = [starTextStyle, "ml-3"].join(" ");
+export const averageText = [starText, "ml-3"].join(" ");
 
-export const averageTotalStyle = [
-  starBase,
-  "text-slate-500",
-  "justify-center",
-].join(" ");
+export const averageTotal = [starBase, "text-slate-500", "justify-center"].join(
+  " "
+);
 
-export const chartBarContainerStyle = [
+export const chartBarContainer = [
   "overflow-hidden",
   "rounded-full",
   "bg-gray-200",
 ].join(" ");
 
-export const chartBarStyle = ["h-2", "rounded-full", "bg-indigo-600"].join(" ");
+export const chartBar = ["h-2", "rounded-full", "bg-indigo-600"].join(" ");

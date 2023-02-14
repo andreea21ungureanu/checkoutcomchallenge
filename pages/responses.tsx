@@ -8,9 +8,8 @@ import { Feedback } from "@/types";
 import getFeedbackHandler from "@/helpers/getFeedbackHandler";
 import FilterButton from "@/components/Buttons/FilterButton";
 import TextItem from "@/components/TextItem";
-import Spinner from "@/components/Spinner";
+import { rootShadow } from "@/styles/globalPageStyles";
 
-const inter = Inter({ subsets: ["latin"] });
 export const ResetFilterContext = createContext(() => {});
 
 export default function ResponsesPage() {
@@ -19,6 +18,7 @@ export default function ResponsesPage() {
   const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(false);
 
+  // Fetching feedback results
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -37,7 +37,7 @@ export default function ResponsesPage() {
   ) : (
     <div className="m-5">
       <NavBar title={"Feedback Results"} leftChild={<BackButton />} />
-      <div className="bg-white px-4 py-5 shadow sm:rounded-lg sm:p-6">
+      <div className={rootShadow}>
         <FeedbackChart setCommentsRatingFilter={setCommentsRatingFilter} />
         <NavBar
           title={"Comments"}

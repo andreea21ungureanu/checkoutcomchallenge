@@ -1,4 +1,4 @@
-import { buttonBaseStyle } from "../generalStyles";
+import { buttonBaseStyle } from "../../../styles/buttonsStyles";
 
 export const buttonStyles = [
   buttonBaseStyle,

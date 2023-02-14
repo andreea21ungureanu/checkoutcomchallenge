@@ -1,11 +1,14 @@
 import { TextAreaProps } from "@/types";
-import { labelStyle, rootStyle, textStyle } from "../generalStyles";
+import {
+  labelStyle,
+  rootStyle,
+  textStyle,
+} from "../../styles/globalComponentStyles";
 import { descriptionStyle } from "./styles";
 
 export default function TextArea({
   label,
   placeholder,
-  description,
   onChange,
   value,
 }: TextAreaProps) {
@@ -25,7 +28,6 @@ export default function TextArea({
           value={value}
         />
       </div>
-      <p className={descriptionStyle}>{description}</p>
     </div>
   );
 }

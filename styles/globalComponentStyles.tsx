@@ -1,3 +1,5 @@
+export const ICON_COLOR = "rgb(246, 227, 23)";
+
 export const labelStyle = [
   "block",
   "text-sm",

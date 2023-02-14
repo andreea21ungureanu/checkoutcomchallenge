@@ -1,5 +1,5 @@
 import { BsXCircleFill } from "react-icons/bs";
-import { icon, root, textStyle } from "./style";
+import { icon, root, text } from "./style";
 import { FormErrorProps } from "@/types";
 
 export default function FormError({ errorObject, field }: FormErrorProps) {
@@ -10,7 +10,7 @@ export default function FormError({ errorObject, field }: FormErrorProps) {
           <BsXCircleFill className={icon} aria-hidden="true" />
         </div>
         <div className="ml-3">
-          <h3 className={textStyle}>{errorObject[field]}</h3>
+          <h3 className={text}>{errorObject[field]}</h3>
         </div>
       </div>
     </div>

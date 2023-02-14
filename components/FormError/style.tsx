@@ -8,4 +8,4 @@ export const root = [
 
 export const icon = ["h-5", "w-5", "text-red-400"].join(" ");
 
-export const textStyle = ["text-xs", "font-medium", "text-red-800"].join(" ");
+export const text = ["text-xs", "font-medium", "text-red-800"].join(" ");

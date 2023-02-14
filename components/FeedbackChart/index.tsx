@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
 import FeedbackAverage from "./FeedbackAverage";
 import {
-  chartBarContainerStyle,
-  chartBarStyle,
+  chartBarContainer,
+  chartBar,
   root,
-  starTextStyle,
-  percentageTextStyle,
+  starText,
+  percentageText,
 } from "./styles";
-import getStarRatingsHandler from "@/helpers/getStarRatingsHandler";
+import getStarRatingsHandler from "@/helpers/handlers/getStarRatingsHandler";
 import { FeedbackChartProps } from "@/types";
 
 export default function FeedbackChart({
@@ -16,6 +16,7 @@ export default function FeedbackChart({
   const [starRatings, setStarRatings] = useState<number[]>([]);
   const [isError, setIsError] = useState(false);
 
+  // Fetches the star ratings for all feedback
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -29,15 +30,18 @@ export default function FeedbackChart({
 
   if (isError) return <h3> Error! Please try again later</h3>;
 
-  // create map with no of each star occurence
+  // Creates a map for star rating occurences
   let starsMap = new Map<number, number>();
   for (let star of starRatings) {
     if (starsMap.has(star)) starsMap.set(star, starsMap.get(star)! + 1);
     else starsMap.set(star, 1);
   }
-  // sort the map
+  // Sorts the map in increasing order
   starsMap = new Map([...starsMap.entries()].sort());
 
+  // Returns the percentage value of a star rating
+  // Used for determining the width of the UI component
+  // As well as the number value
   const starDistribution = (starNumber: number) => {
     if (starsMap.has(starNumber)) {
       return (starsMap.get(starNumber)! / starRatings.length) * 100;
@@ -55,18 +59,18 @@ export default function FeedbackChart({
           className={root}
           onClick={() => setCommentsRatingFilter(index)}
         >
-          <p className={starTextStyle}>{index + " stars"}</p>
+          <p className={starText}>{index + " stars"}</p>
           <div className="mt-4" aria-hidden="true">
-            <div className={chartBarContainerStyle}>
+            <div className={chartBarContainer}>
               <div
-                className={chartBarStyle}
+                className={chartBar}
                 style={{ width: `${starDistribution(index)}%` }}
               />
             </div>
           </div>
-          <p className={percentageTextStyle}>{`${starDistribution(
-            index
-          ).toFixed(2)}%`}</p>
+          <p className={percentageText}>{`${starDistribution(index).toFixed(
+            2
+          )}%`}</p>
         </div>
       ))}
     </div>

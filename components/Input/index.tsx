@@ -1,5 +1,9 @@
 import { InputProps } from "@/types";
-import { rootStyle, textStyle, labelStyle } from "../generalStyles";
+import {
+  rootStyle,
+  textStyle,
+  labelStyle,
+} from "../../styles/globalComponentStyles";
 
 export default function Input({
   label,

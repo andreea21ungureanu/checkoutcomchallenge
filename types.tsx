@@ -18,7 +18,6 @@ export type InputProps = {
 export type TextAreaProps = {
   label: string;
   placeholder: string;
-  description: string;
   onChange: (event: React.ChangeEvent<HTMLTextAreaElement>) => void;
   value: string;
 };

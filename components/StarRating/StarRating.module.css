@@ -1,3 +1,4 @@
+/* Using CSS instead of TainwindUI CSS because of the logic for selectors */
 .stars {
   display: flex;
   flex-direction: row-reverse;

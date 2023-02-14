@@ -17,6 +17,6 @@ export const buttonBaseStyle = [
   "focus:ring-offset-2",
 ].join(" ");
 
-export const iconStyles = ["-ml-1", "-mr-1", "sm:mr-1", "h-4", "w-4"].join(" ");
+export const icon = ["-ml-1", "-mr-1", "sm:mr-1", "h-4", "w-4"].join(" ");
 
-export const spanStyles = ["hidden", "sm:inline"].join(" ");
+export const span = ["hidden", "sm:inline"].join(" ");
