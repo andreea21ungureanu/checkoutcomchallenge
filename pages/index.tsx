@@ -64,15 +64,21 @@ export default function FeedbackForm() {
 
   const router = useRouter();
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    // 1. preventing default form behaviour
     event.preventDefault();
+
+    // 2. validating the form before submission
     validateForm();
 
+    // 3. sending a POST request
     await submitFeedbackHandler({
       name,
       email,
       rating: parseInt(starRating),
       comment,
     });
+
+    // 4. redirecting to the responses page
     router.push("/responses");
   };
 

@@ -8,7 +8,6 @@ export default async function handler(
   const { name, email, rating, comment } = req.body;
 
   if (req.body) {
-    console.log(req.body);
     await feedbackProcessor.create({ name, email, rating, comment });
     res.status(200).json("Feedback submitted");
   } else {

@@ -66,3 +66,13 @@ export type FormErrorProps = {
   field: Fields;
   errorObject: Record<Fields, string>;
 };
+
+export type PaginationProps = {
+  items: number;
+  currentPage: number;
+  onPageChange: () => void;
+};
+
+export type FeedbackCommentsProps = {
+  comments: Array<Feedback>;
+};
