@@ -41,7 +41,11 @@ This made the UI implementation go smoothly and allowed me to focus on the logic
 
 ## How it looks
 
-- Page screenshots
+<img width="1072" alt="Screenshot 2023-02-15 at 09 42 36" src="https://user-images.githubusercontent.com/21296057/219003391-e2f5bd57-dab5-4cc0-9ec2-1b73f2cfb082.png">
+Fig1: Screenshort of the Form Screen
+
+<img width="930" alt="Screenshot 2023-02-15 at 10 33 11" src="https://user-images.githubusercontent.com/21296057/219003415-e11eb803-acef-485b-9aee-e5a67801a14a.png">
+Fig2: Screenshort of the Feedback results Screen
 
 ## How it works
 
