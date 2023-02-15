@@ -87,7 +87,10 @@ You can find more information on the UI below:
 
 ## Testing:
 
-- What is tested
+The test coverage is not 100%, but it does cover a range of test in differents part of the app:
+- The Feedback Form and the Feedback Results Page are tested using React Testing Library. The flow of the application, navigation and the controls on the page are tested as part of this.
+- The API handlers are tested using mocked data via Mocked Service Worker (which was a great aid in mocking the fetch calls).
+- One additional component is tested for visual purposes. 
 
 # Future Improvements:
 
@@ -107,3 +110,6 @@ You can find more information on the UI below:
 ## CSS cleanup
 
 - I’ve chosen Tailwind UI which comes with utility classes. I chose to separate them in “Style.tsx” files for increased readability of the code. However, I am aware that some of them are repeated from one file to the other. In a real application, styles would be much more reused.
+
+## Testing
+- On the testing side, increasing the test coverage to 100% and cleaning up the usage of MSW are tasks still open.
