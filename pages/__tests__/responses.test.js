@@ -103,26 +103,30 @@ describe("Feedback Responses Page", () => {
     // select content based on feedback distribution for 5 stars
     fireEvent.click(fiveStarDistribution);
 
-    expect(screen.getByText("Filtered by 5 ratings")).toBeInTheDocument();
+    expect(screen.getByText("Showing 5 star ratings")).toBeInTheDocument();
   });
 
   it("resets the filter for all comments once Reset Filter is clicked", async () => {
     render(<ResponsesPage />);
     await waitForElementToBeRemoved(screen.queryByLabelText("Loading"));
 
-    const resetFilterButton = screen.getByRole("button", {
-      name: "Reset Filter",
-    });
     const fiveStarDistribution = screen.getByRole("button", {
       name: "5 star distribution rating",
     });
-
     // select content based on feedback distribution for 5 stars
     fireEvent.click(fiveStarDistribution);
-    expect(screen.getByText("Filtered by 5 ratings")).toBeInTheDocument();
+
+    const resetFilterButton = screen.getByRole("button", {
+      name: "Reset Filter",
+    });
+    expect(screen.getByText("Showing 5 star ratings")).toBeInTheDocument();
+    expect(resetFilterButton).toBeInTheDocument();
 
     // reset filter
     fireEvent.click(resetFilterButton);
-    expect(screen.queryByText("Filtered by 5 ratings")).not.toBeInTheDocument();
+    expect(
+      screen.queryByText("Showing 5 star ratings")
+    ).not.toBeInTheDocument();
+    expect(resetFilterButton).not.toBeInTheDocument();
   });
 });

@@ -1,6 +1,6 @@
-import { Feedback } from "@/types";
+import { Feedback } from "../types";
 import { useEffect, useState } from "react";
-import getFeedbackHandler from "@/helpers/handlers/getFeedbackHandler";
+import getFeedbackHandler from "../helpers/handlers/getFeedbackHandler";
 
 export default function useFeedbackFetcher() {
   const [comments, setComments] = useState<Array<Feedback>>([]);

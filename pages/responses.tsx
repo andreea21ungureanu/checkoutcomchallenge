@@ -1,14 +1,12 @@
-import { createContext, useEffect, useState } from "react";
+import { createContext } from "react";
 import FeedbackChart from "../components/FeedbackChart";
 import FeedbackComments from "../components/FeedbackComments";
 import BackButton from "../components/Buttons/BackButton";
 import NavBar from "../components/Layout/NavBar";
-import { Feedback } from "../types";
-import getFeedbackHandler from "../helpers/handlers/getFeedbackHandler";
 import FilterButton from "../components/Buttons/FilterButton";
 import TextItem from "../components/TextItem";
 import { rootShadow } from "../styles/globalPageStyles";
-import useFeedbackFetcher from "@/hooks/useFeedbackFetcher";
+import useFeedbackFetcher from "../hooks/useFeedbackFetcher";
 
 export const ResetFilterContext = createContext(() => {});
 
@@ -21,6 +19,10 @@ export default function ResponsesPage() {
     comments,
   } = useFeedbackFetcher();
 
+  const filterButton = commentsRatingFilter ? (
+    <FilterButton onClick={() => setCommentsRatingFilter("")} />
+  ) : null;
+
   return isError ? (
     <h3> Error! Please try again later</h3>
   ) : (
@@ -30,9 +32,7 @@ export default function ResponsesPage() {
         <FeedbackChart onFilter={setCommentsRatingFilter} />
         <NavBar
           title={"Comments"}
-          rightChild={
-            <FilterButton onClick={() => setCommentsRatingFilter("")} />
-          }
+          rightChild={filterButton}
           leftChild={<TextItem starRating={commentsRatingFilter ?? null} />}
         />
         <FeedbackComments comments={comments} loadingState={isLoading} />
