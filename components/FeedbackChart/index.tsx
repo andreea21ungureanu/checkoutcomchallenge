@@ -10,9 +10,7 @@ import {
 import getStarRatingsHandler from "../../helpers/handlers/getStarRatingsHandler";
 import { FeedbackChartProps } from "@/types";
 
-export default function FeedbackChart({
-  setCommentsRatingFilter,
-}: FeedbackChartProps) {
+export default function FeedbackChart({ onFilter }: FeedbackChartProps) {
   const [starRatings, setStarRatings] = useState<number[]>([]);
   const [isError, setIsError] = useState(false);
 
@@ -61,7 +59,7 @@ export default function FeedbackChart({
           tabIndex={0}
           key={index}
           className={root}
-          onClick={() => setCommentsRatingFilter(index)}
+          onClick={() => onFilter(index)}
         >
           <p className={starText}>{index + " stars"}</p>
           <div className="mt-4" aria-hidden="true">

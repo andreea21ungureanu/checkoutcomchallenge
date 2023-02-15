@@ -8,28 +8,18 @@ import getFeedbackHandler from "../helpers/handlers/getFeedbackHandler";
 import FilterButton from "../components/Buttons/FilterButton";
 import TextItem from "../components/TextItem";
 import { rootShadow } from "../styles/globalPageStyles";
+import useFeedbackFetcher from "@/hooks/useFeedbackFetcher";
 
 export const ResetFilterContext = createContext(() => {});
 
 export default function ResponsesPage() {
-  const [comments, setComments] = useState<Array<Feedback>>([]);
-  const [commentsRatingFilter, setCommentsRatingFilter] = useState("");
-  const [isLoading, setIsLoading] = useState(true);
-  const [isError, setIsError] = useState(false);
-
-  // Fetching feedback results
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const commentsData = await getFeedbackHandler(commentsRatingFilter);
-        setComments(commentsData);
-        setIsLoading(false);
-      } catch (error) {
-        setIsError(true);
-      }
-    };
-    fetchData();
-  }, [commentsRatingFilter]);
+  const {
+    isError,
+    isLoading,
+    commentsRatingFilter,
+    setCommentsRatingFilter,
+    comments,
+  } = useFeedbackFetcher();
 
   return isError ? (
     <h3> Error! Please try again later</h3>
@@ -37,7 +27,7 @@ export default function ResponsesPage() {
     <div className="m-5">
       <NavBar title={"Feedback Results"} leftChild={<BackButton />} />
       <div className={rootShadow}>
-        <FeedbackChart setCommentsRatingFilter={setCommentsRatingFilter} />
+        <FeedbackChart onFilter={setCommentsRatingFilter} />
         <NavBar
           title={"Comments"}
           rightChild={

@@ -94,7 +94,7 @@ You can find more information on the UI below:
 
 ## Validation:
 
-- Another aspect that can be improved is validation of the comments section on the server side. This would enforce no XSS instance.
+- Validation can be improved for all the fields in the form on the server side. One good example is validation of the comments section on the server side. This would enforce no XSS instance.
 
 ## Server
 
