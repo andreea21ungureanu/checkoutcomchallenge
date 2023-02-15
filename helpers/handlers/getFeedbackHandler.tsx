@@ -1,14 +1,14 @@
 import { Feedback, Fields } from "@/types";
 
 // TODO: Validation
-export default async function getFeedbackHandler(queryParam: string) {
+export default async function getFeedbackHandler(queryParam?: string) {
   try {
     let response;
     if (queryParam) {
       let urlSearchParam = new URLSearchParams({ starRating: queryParam });
       response = await fetch("/api/getFeedback?" + urlSearchParam);
     } else {
-      response = await fetch("/api/getFeedback?");
+      response = await fetch("/api/getFeedback");
     }
 
     if (!response.ok) {
@@ -19,6 +19,8 @@ export default async function getFeedbackHandler(queryParam: string) {
     let feedback: Array<Feedback> = await response.json();
     return feedback;
   } catch (error) {
+    console.log(error);
+    console.log("dfsfdssdfsdf");
     throw new Error("An error occured. Please try again.");
   }
 }

@@ -7,7 +7,7 @@ import {
   starText,
   percentageText,
 } from "./styles";
-import getStarRatingsHandler from "@/helpers/handlers/getStarRatingsHandler";
+import getStarRatingsHandler from "../../helpers/handlers/getStarRatingsHandler";
 import { FeedbackChartProps } from "@/types";
 
 export default function FeedbackChart({
@@ -20,7 +20,9 @@ export default function FeedbackChart({
   useEffect(() => {
     const fetchData = async () => {
       try {
-        getStarRatingsHandler().then((result) => setStarRatings(result));
+        // getStarRatingsHandler().then((result) => setStarRatings(result));
+        const ratingData = await getStarRatingsHandler();
+        setStarRatings(ratingData);
       } catch (error) {
         setIsError(true);
       }
