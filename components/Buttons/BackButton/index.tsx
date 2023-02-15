@@ -5,7 +5,12 @@ import Link from "next/link";
 
 export default function BackButton() {
   return (
-    <Link href="/" className={button}>
+    <Link
+      aria-label="Back button"
+      aria-describedby="Navigates to the form page"
+      href="/"
+      className={button}
+    >
       <BiArrowBack className={icon} aria-hidden="true" />
       <span className={span}>Back</span>
     </Link>

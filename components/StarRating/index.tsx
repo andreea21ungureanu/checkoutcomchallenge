@@ -20,25 +20,28 @@ export default function StarRating({
       <label htmlFor={label} className={labelStyle}>
         {label}
       </label>
-      <div className={styles.stars}>
+      <div aria-label={"Star rating"} aria-required className={styles.stars}>
         {[5, 4, 3, 2, 1].map((index) => (
           <React.Fragment key={index}>
             <input
               id={`${index}-${name}`}
               name={name}
               type="radio"
+              role="radio"
               value={index}
               onChange={(event) => {
                 setStarRating(event.currentTarget.value);
               }}
             />
-            <label htmlFor={`${index}-${name}`}>
+            <label tabIndex={0} htmlFor={`${index}-${name}`}>
               <BsStar
+                aria-label="Empty Star"
                 className={styles.empty}
                 color={ICON_COLOR}
                 size={ICON_SIZE}
               />
               <BsStarFill
+                aria-label="Full Star"
                 className={styles.filled}
                 color={ICON_COLOR}
                 size={ICON_SIZE}

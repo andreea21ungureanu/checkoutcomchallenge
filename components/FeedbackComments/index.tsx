@@ -24,6 +24,7 @@ export default function FeedbackComments({
     while (starRating > 0) {
       starsArray.push(
         <BsStarFill
+          aria-label="Full Star"
           key={`feedbackStar-${starRating}`}
           color={ICON_COLOR}
           size={ICON_SIZE}
@@ -44,14 +45,15 @@ export default function FeedbackComments({
         <li key={idx} className={listItem}>
           <div className={commentHeader}>
             <div>
-              <span className="absolute inset-0" aria-hidden="true" />
-              <p className={sender}>{comment.name}</p>
+              <p aria-label={"Reviewer name"} className={sender}>
+                {comment.name}
+              </p>
               <div className="flex flex-row">
                 {renderStars(comment.starRating)}
               </div>
             </div>
           </div>
-          <div className="mt-1">
+          <div aria-label={"Feedback"} className="mt-1">
             <p className={preview}>{comment.comment}</p>
           </div>
         </li>

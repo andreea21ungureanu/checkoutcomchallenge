@@ -37,6 +37,7 @@ export default function FeedbackAverage({
     while (numberOfStars > 0) {
       starsArray.push(
         <BsStarFill
+          aria-label="Full Star"
           key={`avgStar-${numberOfStars}`}
           color={ICON_COLOR}
           size={ICON_SIZE}
@@ -48,6 +49,7 @@ export default function FeedbackAverage({
     while (starsLeft) {
       starsArray.push(
         <BsStar
+          aria-label="Empty Star"
           key={`avgStar-${starsLeft + 5}`}
           color={ICON_COLOR}
           size={ICON_SIZE}
@@ -60,7 +62,11 @@ export default function FeedbackAverage({
 
   return (
     <div className={feedbackAvgRoot}>
-      <div className={feedbackAvgBlockShadow}>
+      <div
+        tabIndex={0}
+        aria-label={"Feedback Average Rating"}
+        className={feedbackAvgBlockShadow}
+      >
         <div className="flex-col">
           <div className="flex flex-row">
             {renderStars()}

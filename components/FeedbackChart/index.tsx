@@ -52,9 +52,12 @@ export default function FeedbackChart({
   return (
     <div>
       <FeedbackAverage ratings={starsMap} totalRatings={starRatings.length} />
-      <h4 className="sr-only">Status</h4>
       {[5, 4, 3, 2, 1].map((index) => (
         <div
+          aria-label={`${index} star distribution rating`}
+          aria-describedby={`Filter by ${index} star distribution rating`}
+          role="button"
+          tabIndex={0}
           key={index}
           className={root}
           onClick={() => setCommentsRatingFilter(index)}

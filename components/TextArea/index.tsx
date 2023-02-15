@@ -22,6 +22,7 @@ export default function TextArea({
           id={`${label}-id`}
           name={`${label}-name`}
           rows={5}
+          aria-multiline="true"
           className={textStyle}
           placeholder={placeholder}
           onChange={onChange}

@@ -1,6 +1,14 @@
-export const root = ["grid", "grid-cols-3", "gap-4", "cursor-pointer"].join(
-  " "
-);
+export const root = [
+  "grid",
+  "grid-cols-3",
+  "gap-4",
+  "cursor-pointer",
+  "focus:ring-2",
+  "focus:ring-inset",
+  "focus:ring-indigo-600",
+  "hover:bg-gray-50",
+].join(" ");
+
 export const feedbackAvgRoot = ["text-center", "mb-5"].join(" ");
 
 export const feedbackAvgBlockShadow = [
