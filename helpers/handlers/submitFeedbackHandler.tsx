@@ -1,12 +1,9 @@
 import { Feedback } from "@/types";
 
-// TODO: Validation
 export default async function submitFeedbackHandler(
   feedbackResponse: Feedback
 ) {
   const { name, email, starRating, comment } = feedbackResponse;
-  console.log(starRating)
-
   const requestOptions = {
     method: "POST",
     headers: { "Content-Type": "application/json" },

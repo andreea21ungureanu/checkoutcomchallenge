@@ -61,7 +61,7 @@ The current flow is:
 
 In a few words, I chose to mock a database for the scope of this challenge by using a JSON file.
 
-Afterwards, I implemented a processor for this file which contains a couple of functions (following CRUD structure, but adapted for this use case). These are used to manage the “database”, i.e. to retrieve elements or to add new ones. This is file system based to it’s easy to operate.
+Afterwards, I implemented a processor for this file which contains a couple of functions (following CRUD structure, but adapted for this use case). These are used to manage the “database”, i.e. to retrieve elements or to add new ones. This is file system based to it’s easy to operate. Thanks to using the CRUD structure, the transition to a real DB would be quite smooth.
 
 The API uses the DB processor to define the API functions
 The API handlers fetch the data from the api such that it can be used with the UI
@@ -98,7 +98,7 @@ You can find more information on the UI below:
 
 ## Validation:
 
-- Another aspect that can be improved is validation of the comments section on the server side. This would enforce no XSS instance.
+- Validation can be improved for all the fields in the form on the server side. One good example is validation of the comments section on the server side. This would enforce no XSS instance.
 
 ## Server
 

@@ -82,5 +82,11 @@
         "email": "mattfroggett@Me.com",
         "starRating": 2,
         "comment": "fdsfsd"
+    },
+    {
+        "name": "Andreea",
+        "email": "and@mmm.co",
+        "starRating": 3,
+        "comment": "Last tested comment wooop"
     }
 ]

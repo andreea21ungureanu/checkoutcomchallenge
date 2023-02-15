@@ -4,7 +4,7 @@ import { FormErrorProps } from "@/types";
 
 export default function FormError({ errorObject, field }: FormErrorProps) {
   return errorObject[field] ? (
-    <div className={root}>
+    <div aria-label={"Form error"} className={root}>
       <div className="flex">
         <div className="flex-shrink-0">
           <BsXCircleFill className={icon} aria-hidden="true" />

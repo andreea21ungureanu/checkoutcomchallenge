@@ -1,6 +1,5 @@
 import { Fields } from "@/types";
 
-// TODO: Validation
 export default async function getStarRatingsHandler() {
   try {
     let response = await fetch("/api/getFeedback");

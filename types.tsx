@@ -25,7 +25,7 @@ export type TextAreaProps = {
 export type StarRatingProps = {
   label: string;
   name: string;
-  setStarRating: Dispatch<SetStateAction<string>>;
+  onChange: Dispatch<SetStateAction<string>>;
 };
 
 export type ButtonProps = {
@@ -81,7 +81,7 @@ export type FeedbackCommentsProps = {
 };
 
 export type FeedbackChartProps = {
-  setCommentsRatingFilter: Dispatch<SetStateAction<any>>;
+  onFilter: Dispatch<SetStateAction<any>>;
 };
 
 export type TextItemProps = {

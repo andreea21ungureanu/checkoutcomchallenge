@@ -10,11 +10,7 @@ import {
 
 const ICON_SIZE = "2em";
 
-export default function StarRating({
-  label,
-  name,
-  setStarRating,
-}: StarRatingProps) {
+export default function StarRating({ label, name, onChange }: StarRatingProps) {
   return (
     <div className={rootStyle}>
       <label htmlFor={label} className={labelStyle}>
@@ -30,7 +26,7 @@ export default function StarRating({
               role="radio"
               value={index}
               onChange={(event) => {
-                setStarRating(event.currentTarget.value);
+                onChange(event.currentTarget.value);
               }}
             />
             <label tabIndex={0} htmlFor={`${index}-${name}`}>
