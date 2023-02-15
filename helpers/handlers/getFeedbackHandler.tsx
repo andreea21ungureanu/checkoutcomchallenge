@@ -1,4 +1,4 @@
-import { Feedback, Fields } from "@/types";
+import { Feedback } from "@/types";
 
 // TODO: Validation
 export default async function getFeedbackHandler(queryParam?: string) {
@@ -20,7 +20,6 @@ export default async function getFeedbackHandler(queryParam?: string) {
     return feedback;
   } catch (error) {
     console.log(error);
-    console.log("dfsfdssdfsdf");
     throw new Error("An error occured. Please try again.");
   }
 }

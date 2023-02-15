@@ -22,9 +22,12 @@ export default function ResponsesPage() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        getFeedbackHandler(commentsRatingFilter)
-          .then((result) => setComments(result))
-          .then(() => setIsLoading(false));
+        // getFeedbackHandler(commentsRatingFilter)
+        //   .then((result) => setComments(result))
+        //   .then(() => setIsLoading(false));
+        const commentsData = await getFeedbackHandler(commentsRatingFilter);
+        setComments(commentsData);
+        setIsLoading(false);
       } catch (error) {
         setIsError(true);
       }
