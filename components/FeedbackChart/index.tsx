@@ -20,7 +20,6 @@ export default function FeedbackChart({
   useEffect(() => {
     const fetchData = async () => {
       try {
-        // getStarRatingsHandler().then((result) => setStarRatings(result));
         const ratingData = await getStarRatingsHandler();
         setStarRatings(ratingData);
       } catch (error) {

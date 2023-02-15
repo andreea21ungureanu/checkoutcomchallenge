@@ -19,4 +19,3 @@ export const indexTextArea = [
   "md:col-span-2",
   "md:mt-0",
 ].join(" ");
-// TODO remove style from names where possible

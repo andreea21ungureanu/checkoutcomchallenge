@@ -1,4 +1,4 @@
-export const lettersSpaceRegex = /^[a-zA-Z ]*$/;
+export const lettersSpaceRegex = /(.|\s)*\S(.|\s)*/gm;
 export const emailRegex =
   /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
 export const startRatingRegex = /^[1-5]$/;

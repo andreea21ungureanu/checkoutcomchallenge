@@ -1,6 +1,5 @@
 import { Feedback } from "@/types";
 
-// TODO: Validation
 export default async function getFeedbackHandler(queryParam?: string) {
   try {
     let response;
@@ -19,7 +18,6 @@ export default async function getFeedbackHandler(queryParam?: string) {
     let feedback: Array<Feedback> = await response.json();
     return feedback;
   } catch (error) {
-    console.log(error);
     throw new Error("An error occured. Please try again.");
   }
 }

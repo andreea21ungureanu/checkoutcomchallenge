@@ -1,25 +1,25 @@
 import { useState } from "react";
-import submitFeedbackHandler from "@/helpers/handlers/submitFeedbackHandler";
-import Input from "@/components/Input";
-import TextArea from "@/components/TextArea";
-import StarRating from "@/components/StarRating";
-import SubmitButton from "@/components/Buttons/SubmitButton";
-import NavBar from "@/components/Layout/NavBar";
+import submitFeedbackHandler from "../helpers/handlers/submitFeedbackHandler";
+import Input from "../components/Input";
+import TextArea from "../components/TextArea";
+import StarRating from "../components/StarRating";
+import SubmitButton from "../components/Buttons/SubmitButton";
+import NavBar from "../components/Layout/NavBar";
 import { useRouter } from "next/router";
-import FormError from "@/components/FormError";
-import { Fields } from "@/types";
+import FormError from "../components/FormError";
+import { Fields } from "../types";
 import {
   indexGridLeft,
   indexRootGrid,
   rootShadow,
   indexTextArea,
-} from "@/styles/globalPageStyles";
+} from "../styles/globalPageStyles";
 import {
   commentRegex,
   emailRegex,
   lettersSpaceRegex,
   startRatingRegex,
-} from "@/helpers/regexHelpers";
+} from "../helpers/regexHelpers";
 
 export default function FeedbackForm() {
   const [name, setName] = useState("");
